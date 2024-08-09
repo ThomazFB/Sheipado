@@ -30,8 +30,8 @@ import com.thomazfb.transform.DissectStep
  *
  * It's capable of not only generating the steps for the normal dissections,
  * but also for the Varied Geometry challenge. Simply create an [EncounterCycle] with the
- * [shouldTargetPureShapes] parameter as true, and the steps will be generated targeting
- * pure shapes.
+ * [EncounterCycle.shouldTargetPureShapes] parameter as true,
+ * and the steps will be generated targeting pure shapes.
  *
  * Be sure to sync with your raid team the following Internal Room strategy:
  *
