@@ -2,7 +2,7 @@ This is a Verity calculator created by https://github.com/ThomazFB
 
 # For those who have no idea of what Verity is
 
-Verity is an encounter inside the Destiny 2 game, and was created to help our team to solve a specific challenge within the game.
+Verity is an encounter inside the Destiny 2 game, and this calculator was created to help our team solve a specific challenge within the game.
 
 If you don't know anything regarding this game or its raids, this code will have no use for you.
 
