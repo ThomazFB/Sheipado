@@ -3,9 +3,9 @@ package encounter
 import com.thomazfb.encounter.EncounterCycle
 import com.thomazfb.encounter.ExternalRoom
 import com.thomazfb.encounter.InternalRoom
+import com.thomazfb.print
 import com.thomazfb.shapes.ThreeDimensionalShape.*
 import com.thomazfb.shapes.TwoDimensionalShape.*
-import com.thomazfb.transform.DissectStep
 import org.assertj.core.api.Assertions.assertThat
 import kotlin.test.Test
 
@@ -27,7 +27,7 @@ class EncounterCycleTest {
 
         val result = cycle.start()
 
-        printResult(result)
+        result.print()
 
         assert(result.size == 3)
         assertThat(result.last().expectedRoom).isEqualTo(
@@ -56,7 +56,7 @@ class EncounterCycleTest {
 
         val result = cycle.start()
 
-        printResult(result)
+        result.print()
 
         assert(result.size == 1)
         assertThat(result.last().expectedRoom).isEqualTo(
@@ -85,7 +85,7 @@ class EncounterCycleTest {
 
         val result = cycle.start()
 
-        printResult(result)
+        result.print()
 
         assert(result.size == 2)
         assertThat(result.last().expectedRoom).isEqualTo(
@@ -114,21 +114,7 @@ class EncounterCycleTest {
         )
 
         val result = cycle.start()
-        printResult(result)
+        result.print()
         assertThat(result).isNotEmpty
-    }
-
-    private fun printResult(result: List<DissectStep>) {
-        result.forEachIndexed { index, step ->
-            println("Step ${index + 1}")
-            println("Dissect ${step.firstStatue.first} from ${step.firstStatue.second}")
-            println("Dissect ${step.secondStatue.first} from ${step.secondStatue.second}")
-            println()
-            print("Left: ${step.expectedRoom.leftShape} | ")
-            print("Middle: ${step.expectedRoom.middleShape} | ")
-            println("Right: ${step.expectedRoom.rightShape}")
-            println("========================")
-            println(" ")
-        }
     }
 }
